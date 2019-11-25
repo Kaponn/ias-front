@@ -1,0 +1,15 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+  margin-top: 0px;
+  font-size: 12px;
+}
