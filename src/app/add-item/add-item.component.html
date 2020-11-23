@@ -1,0 +1,20 @@
+<section class="add-items">
+  <header>
+    <input
+      class="add-item"
+      placeholder="Add items for sell!"
+      [(ngModel)]="newItem.name"
+      (keyup.enter)="addItem()"
+    />
+  </header>
+  <section *ngIf="this.items.length > 0">
+    <ul class="items-list">
+      <li *ngFor="let item of this.items">
+        <div class="view">
+          <label>{{ item.name }}</label>
+          <button class="destroy" (click)="deleteItem(item)">X</button>
+        </div>
+      </li>
+    </ul>
+  </section>
+</section>

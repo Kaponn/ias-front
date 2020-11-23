@@ -1,0 +1,19 @@
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+  margin-top: 0px;
+  font-size: 12px;
+}
+
+a {
+  color: rgb(38, 110, 177);
+}
