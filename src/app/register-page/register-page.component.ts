@@ -34,8 +34,7 @@ export class RegisterPageComponent implements OnInit {
       {
         validator: [
           pudzian('password', 'pudzian'),
-          mustMatch('password', 'confirmPassword'),
-          pudzian('login', 'malpyrazem')
+          mustMatch('password', 'confirmPassword')
         ]
       }
     );
