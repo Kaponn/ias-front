@@ -8,7 +8,7 @@ import { User } from '../user/user';
 @Component({
   selector: 'app-register-page',
   templateUrl: './register-page.component.html',
-  styleUrls: ['./register-page.component.css']
+  styleUrls: ['./register-page.component.css'],
 })
 export class RegisterPageComponent implements OnInit {
   registerForm: FormGroup;
@@ -16,7 +16,7 @@ export class RegisterPageComponent implements OnInit {
   users: User[];
 
   newUser = new User();
-
+  // asdf
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
@@ -29,17 +29,17 @@ export class RegisterPageComponent implements OnInit {
         login: ['', Validators.required],
         email: ['', [Validators.required, Validators.email]],
         password: ['', [Validators.required, Validators.minLength(6)]],
-        confirmPassword: ['', Validators.required]
+        confirmPassword: ['', Validators.required],
       },
       {
         validator: [
           pudzian('password', 'pudzian'),
-          mustMatch('password', 'confirmPassword')
-        ]
+          mustMatch('password', 'confirmPassword'),
+        ],
       }
     );
 
-    this.apiService.getUsers().subscribe(users => (this.users = users));
+    this.apiService.getUsers().subscribe((users) => (this.users = users));
   }
 
   get f() {
@@ -57,8 +57,8 @@ export class RegisterPageComponent implements OnInit {
         username: this.registerForm.value.login,
         email: this.registerForm.value.email,
         id: this.users.length + 1,
-        password: this.registerForm.value.password
-      }
+        password: this.registerForm.value.password,
+      },
     });
     console.log(this.users);
     this.router.navigate(['/main']);
@@ -74,7 +74,7 @@ export class RegisterPageComponent implements OnInit {
       let lastId = this.users.length;
       user.data.id = ++lastId;
     }
-    this.apiService.addUser(user).subscribe(res => this.users.push(res));
+    this.apiService.addUser(user).subscribe((res) => this.users.push(res));
     this.newUser = new User();
     return user;
   }
